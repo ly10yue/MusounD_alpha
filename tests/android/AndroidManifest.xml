@@ -1,0 +1,11 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="studio.interval.tests">
+  <uses-sdk android:minSdkVersion="26" android:targetSdkVersion="35" />
+  <application android:label="Interval smoke tests" />
+  <instrumentation android:name="studio.interval.tests.Smoke" android:targetPackage="studio.interval" android:label="Interval runtime tests" />
+  <instrumentation android:name="studio.interval.tests.ImportSmoke" android:targetPackage="studio.interval" android:label="Desktop export integration" />
+  <instrumentation android:name="studio.interval.tests.NavigationSmoke" android:targetPackage="studio.interval" android:label="Title and song selection" />
+  <instrumentation android:name="studio.interval.tests.MotionSmoke" android:targetPackage="studio.interval" android:label="Region motion and editor parity" />
+  <instrumentation android:name="studio.interval.tests.TrackSmoke" android:targetPackage="studio.interval" android:label="Trajectory and editor parity" />
+  <instrumentation android:name="studio.interval.tests.FlowSmoke" android:targetPackage="studio.interval" android:label="AT Flow and hit sound integration" />
+  <instrumentation android:name="studio.interval.tests.RegionEventsSmoke" android:targetPackage="studio.interval" android:label="Region interval events" />
+</manifest>

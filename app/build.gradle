@@ -1,0 +1,14 @@
+plugins { id 'com.android.application' }
+android {
+    namespace 'studio.interval'
+    compileSdk 35
+    defaultConfig {
+        applicationId 'studio.interval'
+        minSdk 26
+        targetSdk 35
+        versionCode 12
+        versionName '0.12.0'
+    }
+    compileOptions { sourceCompatibility JavaVersion.VERSION_1_8; targetCompatibility JavaVersion.VERSION_1_8 }
+    androidResources { noCompress 'ogg' }
+}
