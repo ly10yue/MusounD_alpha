@@ -12,3 +12,6 @@ __pycache__/
 *.log
 editor/agent-config.json
 .env*
+
+godot/.godot/
+godot/override.cfg

@@ -1,0 +1,133 @@
+{
+  "version": "0.13.0",
+  "engine": "Godot 4.7.1",
+  "coreChecks": 189,
+  "corePassed": true,
+  "reports": {
+    "windows16x9": {
+      "checks": [
+        "built-in library",
+        "minimum 0.6s",
+        "settings persist",
+        "start countdown",
+        "real music playback",
+        "audio-clock elapsed time",
+        "live autoplay judgement",
+        "pause freezes music and chart",
+        "resume countdown and clock",
+        "autoplay Hold reattaches",
+        "return to library",
+        "restart clears judgement",
+        "two-finger touch input",
+        "real touch Hold head attaches",
+        "touch cancellation cannot award a tail hit"
+      ],
+      "engine": "4.7.1-stable (official)",
+      "failures": [],
+      "ok": true,
+      "screen": "(1067.0, 600.0)",
+      "version": "0.13.0"
+    },
+    "windows4x3": {
+      "checks": [
+        "built-in library",
+        "minimum 0.6s",
+        "settings persist",
+        "start countdown",
+        "real music playback",
+        "audio-clock elapsed time",
+        "live autoplay judgement",
+        "pause freezes music and chart",
+        "resume countdown and clock",
+        "autoplay Hold reattaches",
+        "return to library",
+        "restart clears judgement",
+        "two-finger touch input"
+      ],
+      "engine": "4.7.1-stable (official)",
+      "failures": [],
+      "ok": true,
+      "screen": "(1067.0, 800.0)",
+      "version": "0.13.0"
+    },
+    "android16x9": {
+      "checks": [
+        "built-in library",
+        "0.12 settings migration",
+        "0.12 SharedPreferences score migration",
+        "0.12 imported library survives update",
+        "0.12 imported chart score migration",
+        "native content URI package import",
+        "imported AT Flow retains 711 notes",
+        "minimum 0.6s",
+        "settings persist",
+        "start countdown",
+        "real music playback",
+        "audio-clock elapsed time",
+        "live autoplay judgement",
+        "pause freezes music and chart",
+        "resume countdown and clock",
+        "autoplay Hold reattaches",
+        "return to library",
+        "restart clears judgement",
+        "two-finger touch input",
+        "real touch Hold head attaches",
+        "touch cancellation cannot award a tail hit"
+      ],
+      "engine": "4.7.1-stable (official)",
+      "failures": [],
+      "ok": true,
+      "screen": "(1067.0, 600.0)",
+      "version": "0.13.0"
+    },
+    "android4x3": {
+      "checks": [
+        "built-in library",
+        "minimum 0.6s",
+        "settings persist",
+        "start countdown",
+        "real music playback",
+        "audio-clock elapsed time",
+        "live autoplay judgement",
+        "pause freezes music and chart",
+        "resume countdown and clock",
+        "autoplay Hold reattaches",
+        "return to library",
+        "restart clears judgement",
+        "two-finger touch input",
+        "real touch Hold head attaches",
+        "touch cancellation cannot award a tail hit"
+      ],
+      "engine": "4.7.1-stable (official)",
+      "failures": [],
+      "ok": true,
+      "screen": "(1067.0, 800.0)",
+      "version": "0.13.0"
+    },
+    "windowsPackaged": {
+      "checks": [
+        "built-in library",
+        "minimum 0.6s",
+        "settings persist",
+        "start countdown",
+        "real music playback",
+        "audio-clock elapsed time",
+        "live autoplay judgement",
+        "pause freezes music and chart",
+        "resume countdown and clock",
+        "autoplay Hold reattaches",
+        "return to library",
+        "restart clears judgement",
+        "two-finger touch input",
+        "real touch Hold head attaches",
+        "touch cancellation cannot award a tail hit"
+      ],
+      "engine": "4.7.1-stable (official)",
+      "failures": [],
+      "ok": true,
+      "screen": "(1067.0, 1067.0)",
+      "version": "0.13.0"
+    }
+  },
+  "physicalDeviceTested": false
+}

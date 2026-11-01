@@ -1,3 +1,18 @@
+# MusounD · Godot 客户端 0.13.0
+
+当前客户端已迁移至 **Godot 4.7.1 / GDScript**。导入 [godot/project.godot](godot/project.godot) 即可在 Godot 中运行；完整玩法、曲库、设置、音效、暂停续接及结算均已移植。现有 0.12.0 制谱器和 v6 谱面继续兼容。
+
+- [Android APK 与 Windows 客户端](https://github.com/ly10yue/MusounD_alpha/releases/tag/v0.13.0)
+- [Godot 工程与开发说明](godot/README.md)
+- [迁移功能对照与验证](docs/godot-migration.md)
+- [机器可读测试记录](docs/godot-0.13.0-tests.json)
+
+默认构建：`powershell -ExecutionPolicy Bypass -File build.ps1`；可用 `-Target Windows` 或 `-Target Android`。Java 客户端保留作回归参考，使用 `-Legacy` 单独构建。此次迁移不维护网页端。
+
+---
+
+以下为 0.12.0 的历史说明，当前客户端请使用上述 Godot 项目与下载。
+
 # INTERVAL · 区间
 
 Android 下落式音乐游戏与 Windows 制谱器，当前统一版本 **0.12.0**。仅 Tap / Hold，固定下方判定线，支持横屏 16:9 与 4:3。触点可以位于任意高度，但必须落在谱面指定的二维区域内，并满足音符横向位置与时间判定。

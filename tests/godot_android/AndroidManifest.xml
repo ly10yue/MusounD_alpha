@@ -1,0 +1,7 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="studio.interval.godot.tests">
+ <uses-sdk android:minSdkVersion="26" android:targetSdkVersion="36" />
+ <application android:label="MusounD migration fixture">
+  <provider android:name=".FixtureProvider" android:authorities="studio.interval.godot.tests.fixture" android:exported="true" android:grantUriPermissions="true" />
+ </application>
+ <instrumentation android:name=".SeedLegacy" android:targetPackage="studio.interval" android:label="Seed legacy migration fixture" />
+</manifest>
