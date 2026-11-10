@@ -1,0 +1,20 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+[ext_resource type="Script" path="res://ui/playfield_skin.gd" id="script"]
+[resource]
+script = ExtResource("script")
+background = Color(0.062745, 0.098039, 0.105882, 1)
+ink = Color(0.929412, 0.960784, 0.921569, 1)
+tap = Color(0.65098, 0.956863, 0.811765, 1)
+hold = Color(1.0, 0.713725, 0.509804, 1)
+muted = Color(0.552941, 0.647059, 0.643137, 1)
+region_fill = Color(0.101961, 0.164706, 0.160784, 1)
+region_edge = Color(0.376471, 0.545098, 0.462745, 1)
+hold_active = Color(0.470588, 0.384314, 0.278431, 1)
+hold_idle = Color(0.309804, 0.266667, 0.211765, 1)
+highlight = Color(0.929412, 0.976471, 0.952941, 1)
+track = Color(0.56,0.81,0.73,0.55)
+pointer = Color(0.65,0.95,0.81,0.25)
+note_width_ratio = 0.092
+track_width = 2.0
+outline_width = 1.5
+hit_duration_ms = 420.0

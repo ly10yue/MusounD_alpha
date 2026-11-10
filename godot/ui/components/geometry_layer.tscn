@@ -1,0 +1,14 @@
+[gd_scene load_steps=7 format=3]
+[ext_resource type="Script" path="res://ui/geometry_layer.gd" id="script"]
+[ext_resource type="PackedScene" path="res://ui/components/rectangle.tscn" id="rect"]
+[ext_resource type="PackedScene" path="res://ui/components/polyline.tscn" id="line"]
+[ext_resource type="PackedScene" path="res://ui/components/polygon.tscn" id="polygon"]
+[ext_resource type="PackedScene" path="res://ui/components/note_head.tscn" id="head"]
+[ext_resource type="PackedScene" path="res://ui/components/hold_tail.tscn" id="tail"]
+[node name="GeometryLayer" type="Node2D"]
+script = ExtResource("script")
+rectangle_scene = ExtResource("rect")
+polyline_scene = ExtResource("line")
+polygon_scene = ExtResource("polygon")
+note_head_scene = ExtResource("head")
+hold_tail_scene = ExtResource("tail")

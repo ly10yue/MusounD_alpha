@@ -1,0 +1,250 @@
+[gd_scene load_steps=2 format=3]
+[ext_resource type="Theme" path="res://ui/theme.tres" id="theme"]
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+mouse_filter = 2
+theme = ExtResource("theme")
+
+[node name="TopBar" type="ColorRect" parent="."]
+layout_mode = 0
+anchor_left = 0
+anchor_right = 1
+offset_left = 0
+offset_right = 0
+offset_top = 0
+offset_bottom = 88
+mouse_filter = 2
+color = Color(0.062745, 0.098039, 0.105882, 1)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0
+anchor_right = 0.36
+offset_left = 48
+offset_right = 48
+offset_top = 12
+offset_bottom = 41
+mouse_filter = 2
+text = "曲名"
+theme_override_font_sizes/font_size = 17
+theme_override_colors/font_color = Color(0.929412, 0.960784, 0.921569, 1)
+horizontal_alignment = 0
+text_overrun_behavior = 3
+
+[node name="Artist" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0
+anchor_right = 0.36
+offset_left = 48
+offset_right = 48
+offset_top = 41
+offset_bottom = 63
+mouse_filter = 2
+text = "作曲 / 难度"
+theme_override_font_sizes/font_size = 10
+theme_override_colors/font_color = Color(0.552941, 0.647059, 0.643137, 1)
+horizontal_alignment = 0
+text_overrun_behavior = 3
+
+[node name="Mode" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100
+offset_right = 100
+offset_top = 16
+offset_bottom = 39
+mouse_filter = 2
+text = "LIVE / 演奏"
+theme_override_font_sizes/font_size = 11
+theme_override_colors/font_color = Color(0.65098, 0.956863, 0.811765, 1)
+horizontal_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Accuracy" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100
+offset_right = 100
+offset_top = 40
+offset_bottom = 64
+mouse_filter = 2
+text = "100.00%"
+theme_override_font_sizes/font_size = 12
+theme_override_colors/font_color = Color(0.552941, 0.647059, 0.643137, 1)
+horizontal_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Score" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 1
+anchor_right = 1
+offset_left = -330
+offset_right = -110
+offset_top = 10
+offset_bottom = 49
+mouse_filter = 2
+text = "0000000"
+theme_override_font_sizes/font_size = 27
+theme_override_colors/font_color = Color(0.929412, 0.960784, 0.921569, 1)
+horizontal_alignment = 2
+text_overrun_behavior = 3
+
+[node name="Combo" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150
+offset_right = 150
+offset_top = 133
+offset_bottom = 187
+mouse_filter = 2
+text = ""
+theme_override_font_sizes/font_size = 42
+theme_override_colors/font_color = Color(0.929412, 0.960784, 0.921569, 1)
+horizontal_alignment = 1
+text_overrun_behavior = 3
+
+[node name="ComboCaption" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150
+offset_right = 150
+offset_top = 188
+offset_bottom = 210
+mouse_filter = 2
+text = "COMBO"
+theme_override_font_sizes/font_size = 10
+theme_override_colors/font_color = Color(0.552941, 0.647059, 0.643137, 1)
+horizontal_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Feedback" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150
+offset_right = 150
+offset_top = 226
+offset_bottom = 257
+mouse_filter = 2
+text = ""
+theme_override_font_sizes/font_size = 19
+theme_override_colors/font_color = Color(0.65098, 0.956863, 0.811765, 1)
+horizontal_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Timing" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150
+offset_right = 150
+offset_top = 256
+offset_bottom = 278
+mouse_filter = 2
+text = ""
+theme_override_font_sizes/font_size = 10
+theme_override_colors/font_color = Color(0.552941, 0.647059, 0.643137, 1)
+horizontal_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Judgement" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0
+anchor_right = 0
+offset_left = 48
+offset_right = 398
+offset_top = 490
+offset_bottom = 511
+mouse_filter = 2
+text = "JUDGEMENT / FIXED"
+theme_override_font_sizes/font_size = 9
+theme_override_colors/font_color = Color(0.552941, 0.647059, 0.643137, 1)
+horizontal_alignment = 0
+text_overrun_behavior = 3
+
+[node name="Section" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0
+anchor_right = 1
+offset_left = 48
+offset_right = -232
+offset_top = 565
+offset_bottom = 589
+mouse_filter = 2
+text = "准备"
+theme_override_font_sizes/font_size = 12
+theme_override_colors/font_color = Color(0.65098, 0.956863, 0.811765, 1)
+horizontal_alignment = 0
+text_overrun_behavior = 3
+
+[node name="Time" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 1
+anchor_right = 1
+offset_left = -230
+offset_right = -48
+offset_top = 566
+offset_bottom = 589
+mouse_filter = 2
+text = "00:00 / 00:00"
+theme_override_font_sizes/font_size = 11
+theme_override_colors/font_color = Color(0.552941, 0.647059, 0.643137, 1)
+horizontal_alignment = 2
+text_overrun_behavior = 3
+
+[node name="ProgressBackground" type="ColorRect" parent="."]
+layout_mode = 0
+anchor_left = 0
+anchor_right = 1
+offset_left = 48
+offset_right = -48
+offset_top = 77
+offset_bottom = 79
+mouse_filter = 2
+color = Color(0.188235, 0.258824, 0.266667, 1)
+
+[node name="Progress" type="ColorRect" parent="."]
+layout_mode = 0
+anchor_left = 0
+anchor_right = 1
+offset_left = 48
+offset_right = -48
+offset_top = 77
+offset_bottom = 79
+mouse_filter = 2
+color = Color(0.65098, 0.956863, 0.811765, 1)
+
+[node name="NextPanel" type="Panel" parent="."]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -172
+offset_right = 172
+offset_top = 521
+offset_bottom = 554
+mouse_filter = 2
+
+
+[node name="Next" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -162
+offset_right = 162
+offset_top = 525
+offset_bottom = 550
+mouse_filter = 2
+text = "即将切换"
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(1.0, 0.713725, 0.509804, 1)
+horizontal_alignment = 1
+text_overrun_behavior = 3

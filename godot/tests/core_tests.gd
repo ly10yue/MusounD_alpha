@@ -34,7 +34,27 @@ func minimal() -> Dictionary:
 
 func engine(): return Core.new(Loader.new().parse(minimal()))
 
+func spatial_tests():
+	var raw=minimal()
+	raw.lines[0].frames[0].x=-500
+	raw.lines[0].events={"x":[{"start":1,"end":2,"from":500,"to":50}]}
+	raw.sections[0].rects=[[450,0,550,0],[10,10,20,20]]
+	raw.sections[0].events=[{"center":[{"start":1,"end":2,"from":[500,50],"to":[50,50]}],"height":[{"start":0,"end":1,"from":0,"to":100}],"width":[{"start":3,"end":4,"from":100,"to":0}]},{}]
+	var loader=Loader.new(); var chart=loader.parse(raw)
+	check(not chart.is_empty(),"extended spatial ranges load: "+loader.error)
+	if chart.is_empty(): return
+	var e=Core.new(chart); var zone=e.sections[0].zones[0]
+	check(e.lines[0].x(0)==-5 and e.lines[0].x(1)==5 and e.lines[0].x(2)==0.5,"track leaves and returns")
+	for aspect in [1.17,1.62]:
+		e.field_aspect=aspect
+		check(zone.polygon(0,aspect).is_empty(),"zero height has no outline")
+		check(e.touch_y(.5,1)==null and not e.allowed(.5,.5,1),"offscreen area is unreachable")
+		check(e.allowed(.5,.5,2) and e.touch_y(.5,2)!=null,"area returns onscreen")
+		check(zone.polygon(4,aspect).is_empty() and e.touch_y(.5,4)==null and not e.allowed(.5,.5,4),"zero width removes even the center from judgement")
+		check(e.allowed(.15,.15,4),"sibling area stays active")
+
 func behaviour_tests():
+	spatial_tests()
 	var e=engine()
 	check(e.down(1,0.2,0.1,1)==null and e.notes[0].state==Core.WAIT,"outside region cannot consume note")
 	e.down(2,0.2,0.9,1); check(e.perfect==1,"any allowed height judges")
@@ -66,7 +86,7 @@ func behaviour_tests():
 		e=Core.new(chart)
 		for i in range(241): e.autoplay(i/60.0)
 		check(e.perfect==2,"legacy v%d still playable" % version)
-	for mutation in [{"version":7},{"coordinateScale":1},{"minReaderVersion":"0.14.0"},{"minReaderVersion":"invalid"}]:
+	for mutation in [{"version":7},{"coordinateScale":1},{"minReaderVersion":"99.0.0"},{"minReaderVersion":"invalid"}]:
 		raw=minimal(); raw.merge(mutation,true); check(loader.parse(raw).is_empty(),"invalid or future version rejected")
 	raw=minimal(); raw.notes[0].line="missing"; check(loader.parse(raw).is_empty(),"unknown line rejected")
 	raw=minimal(); raw.lines[0].events={"speed":[{"start":0,"end":2,"from":1,"to":9,"ease":"linear"}]}; check(loader.parse(raw).is_empty(),"invalid speed rejected")

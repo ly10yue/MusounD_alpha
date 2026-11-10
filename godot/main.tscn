@@ -1,10 +1,61 @@
-[gd_scene load_steps=2 format=3]
-[ext_resource type="Script" path="res://main.gd" id="1"]
+[gd_scene load_steps=14 format=3]
+[ext_resource type="Script" path="res://main.gd" id="script"]
+[ext_resource type="Theme" path="res://ui/theme.tres" id="theme"]
+[ext_resource type="PackedScene" path="res://ui/playfield.tscn" id="field"]
+[ext_resource type="PackedScene" path="res://ui/components/toast.tscn" id="toast"]
+[ext_resource type="PackedScene" path="res://ui/pages/title.tscn" id="title"]
+[ext_resource type="PackedScene" path="res://ui/pages/songs.tscn" id="songs"]
+[ext_resource type="PackedScene" path="res://ui/pages/settings.tscn" id="settings"]
+[ext_resource type="PackedScene" path="res://ui/pages/help.tscn" id="help"]
+[ext_resource type="PackedScene" path="res://ui/pages/count.tscn" id="count"]
+[ext_resource type="PackedScene" path="res://ui/pages/play.tscn" id="play"]
+[ext_resource type="PackedScene" path="res://ui/pages/pause.tscn" id="pause"]
+[ext_resource type="PackedScene" path="res://ui/pages/result.tscn" id="result"]
+[ext_resource type="Script" path="res://services/android_update.gd" id="update"]
 [node name="MusounD" type="Control"]
-layout_mode=3
-anchors_preset=15
-anchor_right=1.0
-anchor_bottom=1.0
-grow_horizontal=2
-grow_vertical=2
-script=ExtResource("1")
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+theme = ExtResource("theme")
+script = ExtResource("script")
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0.062745, 0.098039, 0.105882, 1)
+[node name="Playfield" parent="." instance=ExtResource("field")]
+visible = false
+[node name="UI" type="Control" parent="."]
+offset_right = 1066.6667
+offset_bottom = 600.0
+mouse_filter = 2
+[node name="Title" parent="UI" instance=ExtResource("title")]
+visible = true
+[node name="Songs" parent="UI" instance=ExtResource("songs")]
+visible = false
+[node name="Settings" parent="UI" instance=ExtResource("settings")]
+visible = false
+[node name="Help" parent="UI" instance=ExtResource("help")]
+visible = false
+[node name="Count" parent="UI" instance=ExtResource("count")]
+visible = false
+[node name="Play" parent="UI" instance=ExtResource("play")]
+visible = false
+[node name="Pause" parent="UI" instance=ExtResource("pause")]
+visible = false
+[node name="Result" parent="UI" instance=ExtResource("result")]
+visible = false
+[node name="Toast" parent="UI" instance=ExtResource("toast")]
+visible = false
+[node name="ImportDialog" type="FileDialog" parent="."]
+title = "导入谱面"
+file_mode = 0
+access = 2
+use_native_dialog = true
+[node name="MessageDialog" type="AcceptDialog" parent="."]
+title = "MusounD"
+
+[node name="AndroidUpdate" type="Node" parent="."]
+script = ExtResource("update")

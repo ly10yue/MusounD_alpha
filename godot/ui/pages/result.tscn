@@ -1,0 +1,288 @@
+[gd_scene load_steps=2 format=3]
+[ext_resource type="Theme" path="res://ui/theme.tres" id="theme"]
+[node name="Result" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+mouse_filter = 2
+theme = ExtResource("theme")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+anchor_left = 0
+anchor_right = 1
+offset_left = 0
+offset_right = 0
+offset_top = 0
+offset_bottom = 600
+mouse_filter = 2
+color = Color(0.062745, 0.098039, 0.105882, 1)
+
+[node name="Mode" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0
+anchor_right = 0
+offset_left = 48
+offset_right = 648
+offset_top = 25
+offset_bottom = 55
+mouse_filter = 2
+text = "SESSION COMPLETE"
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(0.65098, 0.956863, 0.811765, 1)
+horizontal_alignment = 0
+text_overrun_behavior = 3
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0
+anchor_right = 1
+offset_left = 48
+offset_right = -48
+offset_top = 96
+offset_bottom = 140
+mouse_filter = 2
+text = "这一次，节奏属于你。"
+theme_override_font_sizes/font_size = 32
+theme_override_colors/font_color = Color(0.929412, 0.960784, 0.921569, 1)
+horizontal_alignment = 0
+text_overrun_behavior = 3
+
+[node name="Song" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0
+anchor_right = 1
+offset_left = 48
+offset_right = -48
+offset_top = 149
+offset_bottom = 173
+mouse_filter = 2
+text = ""
+theme_override_font_sizes/font_size = 12
+theme_override_colors/font_color = Color(0.552941, 0.647059, 0.643137, 1)
+horizontal_alignment = 0
+text_overrun_behavior = 3
+
+[node name="Rank" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0
+anchor_right = 0
+offset_left = 48
+offset_right = 228
+offset_top = 182
+offset_bottom = 294
+mouse_filter = 2
+text = "AP"
+theme_override_font_sizes/font_size = 100
+theme_override_colors/font_color = Color(0.65098, 0.956863, 0.811765, 1)
+horizontal_alignment = 0
+text_overrun_behavior = 3
+
+[node name="Score" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0
+anchor_right = 0
+offset_left = 230
+offset_right = 730
+offset_top = 212
+offset_bottom = 278
+mouse_filter = 2
+text = "0000000"
+theme_override_font_sizes/font_size = 54
+theme_override_colors/font_color = Color(0.929412, 0.960784, 0.921569, 1)
+horizontal_alignment = 0
+text_overrun_behavior = 3
+
+[node name="ScoreCaption" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0
+anchor_right = 0
+offset_left = 233
+offset_right = 633
+offset_top = 287
+offset_bottom = 311
+mouse_filter = 2
+text = "SCORE / 1,000,000"
+theme_override_font_sizes/font_size = 12
+theme_override_colors/font_color = Color(0.552941, 0.647059, 0.643137, 1)
+horizontal_alignment = 0
+text_overrun_behavior = 3
+
+[node name="Accuracy" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0
+anchor_right = 1
+offset_left = 48
+offset_right = -48
+offset_top = 445
+offset_bottom = 471
+mouse_filter = 2
+text = ""
+theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(0.65098, 0.956863, 0.811765, 1)
+horizontal_alignment = 0
+text_overrun_behavior = 3
+
+[node name="Timing" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0
+anchor_right = 1
+offset_left = 48
+offset_right = -48
+offset_top = 473
+offset_bottom = 498
+mouse_filter = 2
+text = ""
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.552941, 0.647059, 0.643137, 1)
+horizontal_alignment = 0
+text_overrun_behavior = 3
+
+[node name="PerfectPanel" type="Panel" parent="."]
+layout_mode = 0
+anchor_left = 0.0
+anchor_right = 0.3333333333333333
+offset_left = 48
+offset_right = 8
+offset_top = 343
+offset_bottom = 429
+mouse_filter = 2
+
+
+[node name="PerfectTitle" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0.0
+anchor_right = 0.0
+offset_left = 66
+offset_right = 266
+offset_top = 350
+offset_bottom = 373
+mouse_filter = 2
+text = "PERFECT"
+theme_override_font_sizes/font_size = 11
+theme_override_colors/font_color = Color(0.552941, 0.647059, 0.643137, 1)
+horizontal_alignment = 0
+text_overrun_behavior = 3
+
+[node name="PerfectValue" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0.0
+anchor_right = 0.0
+offset_left = 66
+offset_right = 266
+offset_top = 371
+offset_bottom = 413
+mouse_filter = 2
+text = "0"
+theme_override_font_sizes/font_size = 30
+theme_override_colors/font_color = Color(0.929412, 0.960784, 0.921569, 1)
+horizontal_alignment = 0
+text_overrun_behavior = 3
+
+[node name="GoodPanel" type="Panel" parent="."]
+layout_mode = 0
+anchor_left = 0.3333333333333333
+anchor_right = 0.6666666666666666
+offset_left = 20
+offset_right = -20
+offset_top = 343
+offset_bottom = 429
+mouse_filter = 2
+
+
+[node name="GoodTitle" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0.3333333333333333
+anchor_right = 0.3333333333333333
+offset_left = 38
+offset_right = 238
+offset_top = 350
+offset_bottom = 373
+mouse_filter = 2
+text = "GOOD"
+theme_override_font_sizes/font_size = 11
+theme_override_colors/font_color = Color(0.552941, 0.647059, 0.643137, 1)
+horizontal_alignment = 0
+text_overrun_behavior = 3
+
+[node name="GoodValue" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0.3333333333333333
+anchor_right = 0.3333333333333333
+offset_left = 38
+offset_right = 238
+offset_top = 371
+offset_bottom = 413
+mouse_filter = 2
+text = "0"
+theme_override_font_sizes/font_size = 30
+theme_override_colors/font_color = Color(0.929412, 0.960784, 0.921569, 1)
+horizontal_alignment = 0
+text_overrun_behavior = 3
+
+[node name="MissPanel" type="Panel" parent="."]
+layout_mode = 0
+anchor_left = 0.6666666666666666
+anchor_right = 1.0
+offset_left = -8
+offset_right = -48
+offset_top = 343
+offset_bottom = 429
+mouse_filter = 2
+
+
+[node name="MissTitle" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0.6666666666666666
+anchor_right = 0.6666666666666666
+offset_left = 10
+offset_right = 210
+offset_top = 350
+offset_bottom = 373
+mouse_filter = 2
+text = "MISS"
+theme_override_font_sizes/font_size = 11
+theme_override_colors/font_color = Color(1.0, 0.713725, 0.509804, 1)
+horizontal_alignment = 0
+text_overrun_behavior = 3
+
+[node name="MissValue" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0.6666666666666666
+anchor_right = 0.6666666666666666
+offset_left = 10
+offset_right = 210
+offset_top = 371
+offset_bottom = 413
+mouse_filter = 2
+text = "0"
+theme_override_font_sizes/font_size = 30
+theme_override_colors/font_color = Color(0.929412, 0.960784, 0.921569, 1)
+horizontal_alignment = 0
+text_overrun_behavior = 3
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 0
+anchor_left = 0
+anchor_right = 0
+offset_left = 48
+offset_right = 204
+offset_top = 522
+offset_bottom = 565
+mouse_filter = 0
+text = "返回选歌"
+
+[node name="Restart" type="Button" parent="."]
+layout_mode = 0
+anchor_left = 1
+anchor_right = 1
+offset_left = -248
+offset_right = -48
+offset_top = 522
+offset_bottom = 565
+mouse_filter = 0
+text = "再来一次 →"
+theme_type_variation = &"Primary"

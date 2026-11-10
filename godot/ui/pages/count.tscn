@@ -1,0 +1,63 @@
+[gd_scene load_steps=2 format=3]
+[ext_resource type="Theme" path="res://ui/theme.tres" id="theme"]
+[node name="Count" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+mouse_filter = 2
+theme = ExtResource("theme")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -155
+offset_right = 155
+offset_top = 140
+offset_bottom = 295
+mouse_filter = 2
+
+
+[node name="Number" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150
+offset_right = 150
+offset_top = 159
+offset_bottom = 229
+mouse_filter = 2
+text = "3"
+theme_override_font_sizes/font_size = 58
+theme_override_colors/font_color = Color(0.65098, 0.956863, 0.811765, 1)
+horizontal_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Hint" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150
+offset_right = 150
+offset_top = 249
+offset_bottom = 274
+mouse_filter = 2
+text = "准备进入区间 · 可重新按住 Hold"
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.929412, 0.960784, 0.921569, 1)
+horizontal_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Pause" type="Button" parent="."]
+layout_mode = 0
+anchor_left = 1
+anchor_right = 1
+offset_left = -95
+offset_right = -48
+offset_top = 20
+offset_bottom = 65
+mouse_filter = 0
+text = "Ⅱ"

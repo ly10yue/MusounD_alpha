@@ -1,8 +1,9 @@
 extends RefCounted
 ## Versioned file boundary. Keeps imported data immutable and rejects ambiguous units.
 const Core=preload("res://core/rhythm_core.gd")
-const VERSION="0.13.0"
+const VERSION="0.14.0"
 const FORMAT=6
+const POSITION_LIMIT=10.0 # Normalized: 1.0 is one playfield dimension.
 const EASES=["linear","smooth","hold","sine_in_out","sine_in","sine_out"]
 var error=""
 var animation_count=0
@@ -70,7 +71,9 @@ func parse(raw) -> Dictionary:
 				if version<4 or not item.events is Dictionary: return fail("轨迹时间条需要 v4 格式")
 				for prop in item.events:
 					if not prop in ["x","alpha","speed"]: return fail("未知轨迹变化栏")
-					events[prop]=parse_events(item.events[prop],bpm,0.0,8.0 if prop=="speed" else 1.0,factor if prop=="x" else 1.0)
+					var low=-POSITION_LIMIT if prop=="x" else 0.0
+					var high=POSITION_LIMIT if prop=="x" else (8.0 if prop=="speed" else 1.0)
+					events[prop]=parse_events(item.events[prop],bpm,low,high,factor if prop=="x" else 1.0)
 					if not error.is_empty(): return {}
 			var line=Core.Track.new({"id":item.id,"name":str(item.get("name",item.id)).left(200),"frames":frames,"events":events})
 			lines.append(line); line_map[item.id]=line
@@ -109,9 +112,9 @@ func parse(raw) -> Dictionary:
 			if not sequence(r,4) or r.size()!=4: return fail("区域矩形需要四个坐标")
 			var rect=[]
 			for value in r:
-				if not numeric(value,0,1.0/factor): return fail("区域坐标越界")
+				if not numeric(value,-POSITION_LIMIT/factor,POSITION_LIMIT/factor): return fail("区域坐标越界")
 				rect.append(value*factor)
-			if rect[2]<=rect[0] or rect[3]<=rect[1]: return fail("区域长宽必须大于零")
+			if rect[2]<rect[0] or rect[3]<rect[1] or maxf(rect[2]-rect[0],rect[3]-rect[1])>POSITION_LIMIT+1e-10: return fail("区域长宽须在 0 到 1000 之间")
 			var frames=parse_frames(motions[i] if not motions.is_empty() else [],bpm,factor,true)
 			if not error.is_empty(): return {}
 			if version==1 and not frames.is_empty(): return fail("运动帧需要 v2 格式")
@@ -121,8 +124,8 @@ func parse(raw) -> Dictionary:
 				if not events[i] is Dictionary: return fail("区域变化栏无效")
 				for prop in events[i]:
 					if not prop in ["center","angle","width","height"]: return fail("未知区域变化栏")
-					var low=-2.0 if prop=="center" else (-36000.0 if prop=="angle" else 0.001)
-					var high=3.0 if prop=="center" else (36000.0 if prop=="angle" else 4.0)
+					var low=-POSITION_LIMIT if prop=="center" else (-36000.0 if prop=="angle" else 0.0)
+					var high=36000.0 if prop=="angle" else POSITION_LIMIT
 					channels[prop]=parse_events(events[i][prop],bpm,low,high,1.0 if prop=="angle" else factor,prop=="center")
 					if not error.is_empty(): return {}
 					animation_count+=channels[prop].size()
@@ -141,10 +144,10 @@ func parse_frames(raw,bpm: float,factor: float,region: bool) -> Array:
 		if not ease in ["linear","smooth","hold"]: error="关键帧缓动无效"; return []
 		last=f.time
 		if region:
-			if not numeric(f.get("x"),-2/factor,2/factor) or not numeric(f.get("y"),-2/factor,2/factor) or not numeric(f.get("angle"),-36000,36000): error="区域运动帧无效"; return []
+			if not numeric(f.get("x"),-POSITION_LIMIT/factor,POSITION_LIMIT/factor) or not numeric(f.get("y"),-POSITION_LIMIT/factor,POSITION_LIMIT/factor) or not numeric(f.get("angle"),-36000,36000): error="区域运动帧无效"; return []
 			result.append({"time":float(f.time),"x":f.x*factor,"y":f.y*factor,"angle":float(f.angle),"ease":ease})
 		else:
-			if not numeric(f.get("x"),0,1/factor) or not numeric(f.get("alpha"),0,1): error="轨迹位置或透明度无效"; return []
+			if not numeric(f.get("x"),-POSITION_LIMIT/factor,POSITION_LIMIT/factor) or not numeric(f.get("alpha"),0,1): error="轨迹位置或透明度无效"; return []
 			result.append({"time":float(f.time),"x":f.x*factor,"alpha":float(f.alpha),"ease":ease})
 	return result
 

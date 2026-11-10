@@ -1,0 +1,4 @@
+[gd_scene format=3]
+[node name="Polyline" type="Line2D"]
+width = 2.0
+antialiased = true

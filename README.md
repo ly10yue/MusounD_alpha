@@ -1,3 +1,11 @@
+# MusounD · Godot 客户端 0.14.0 源码
+
+当前源码与构建说明见 [Godot 客户端](godot/README.md) 和 [Agent 交接说明](godot/AGENTS.md)。已发布版本见 [Releases](https://github.com/ly10yue/MusounD_alpha/releases)。
+
+以下为既有版本说明。
+
+---
+
 # MusounD · Godot 客户端 0.13.0
 
 当前客户端已迁移至 **Godot 4.7.1 / GDScript**。导入 [godot/project.godot](godot/project.godot) 即可在 Godot 中运行；完整玩法、曲库、设置、音效、暂停续接及结算均已移植。现有 0.12.0 制谱器和 v6 谱面继续兼容。

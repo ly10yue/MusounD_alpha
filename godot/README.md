@@ -1,4 +1,4 @@
-# MusounD Godot 客户端 · 0.13.0
+# MusounD Godot 客户端 · 0.14.0
 
 完整原生客户端，使用 Godot **4.7.1 标准版 / GDScript / Compatibility**。在 Godot 项目管理器中导入本目录 `project.godot`，按 F6/F5 运行；主场景为 `main.tscn`。本版本不导出或维护网页。
 
@@ -14,7 +14,7 @@ Tap 在到线时点击，Hold 持续按住并跟随底部交点；点击高度�
 
 ## 格式与旧数据
 
-保留格式 v6、coordinateScale=100，读取 v1–v5 时转换旧归一化坐标；基线兼容测试覆盖 Composer 0.11.0，早期读取分支也保留。未知格式和要求更高 minReaderVersion 的文件明确拒绝。客户端为 0.13.0，谱面不需要改版；现有制谱器与 APK 0.12.0 均可继续使用原包。
+保留格式 v6、coordinateScale=100，读取 v1–v5 时转换旧归一化坐标；基线兼容测试覆盖 Composer 0.11.0，早期读取分支也保留。未知格式和要求更高 minReaderVersion 的文件明确拒绝。客户端为 0.14.0，谱面不需要改版；现有制谱器与 APK 0.12.0 均可继续使用原包。
 
 Android 包名继续为 `studio.interval`。使用与旧开发版相同签名时可覆盖安装，保留 `files/charts` 曲库，并读取旧 SharedPreferences 设置与最高分。不要先卸载旧 APK，卸载可能删除应用数据。Windows 默认保存到 `%APPDATA%/MusounD/`；Android 保存在应用私有 files 目录。
 
@@ -39,10 +39,18 @@ python tools/build_godot.py
 
 可指定 `--godot <Godot EXE>`、`--target Windows` 或 `--target Android`。需要对应的 4.7.1 导出模板；Android 还需要 JDK 和 SDK。Android Alpha 构建使用本机 `build/debug.jks`，私钥不会提交 Git。
 
+Android 从 0.14.0 开始，每次冷启动会在后台检查服务器上的版本。首页右上角显示状态。发现较高的 versionCode 时，客户端自动下载完整 APK，在应用私有目录核对长度和 SHA-256，通过后点「安装更新」进入 Android 安装器。网络不可用时仍可正常选歌。首次从 0.13.0 迁移要手动覆盖安装一次。
+
+发布 Android 更新时，先同步 `release.json`、`project.godot` 和 Android 导出预设里的版本号，递增 versionCode，并保留原签名。运行 `python tools/build_godot.py --target Android --android-release`，再运行 `python tools/prepare_android_update.py`（Python 3.11+ 和 cryptography）。第二步会核对实际 APK 的签名、包名、版本与权限，生成 `dist/android-updates/MusounD-<versionCode>.apk` 和已签名的 `latest.json`。将 APK 上传到服务器的 `/musound/android/`，校验文件哈希后再原子替换同目录的 `latest.json`。每个 versionCode 只发布一次，保留已发布的包供下载。服务器只保存这两个公开文件，清单在本机签名。
+
 核心测试使用 Godot 无界面运行 `--headless --path godot --script tests/core_tests.gd`。运行客户端时可传 `-- --verify-output=<报告绝对路径>` 检查实际界面、声音、触控与暂停续接。`tools/test_godot_android.py` 仅用于隔离模拟器，会写入测试曲库与成绩。
 
-导出目录：`dist/godot-0.13.0/`（EXE 与 PCK 必须一起保留）；APK：`dist/MusounD-0.13.0.apk`。
+导出目录：`dist/godot-0.14.0/`（EXE 与 PCK 必须一起保留）；APK：`dist/MusounD-0.14.0.apk`。
 
 ## 许可
 
 Godot Engine 使用 MIT 许可，随工程附带 `licenses/Godot-LICENSE.txt` 和 `licenses/Godot-COPYRIGHT.txt`，另见 https://godotengine.org/license/ 。Noto Sans SC 使用 SIL OFL，随字体附带 `assets/fonts/OFL.txt`。示例音乐版权归 technoplanet；资源沿用现有客户端示例。Godot 本机安装、导出模板与 Android 签名不纳入源码仓库。
+
+## 可视化编辑界面
+
+所有页面、HUD、游戏背景和音符头已迁移为原生 `.tscn` 场景，主题与动态画面配色使用 `.tres` 资源。打开 `main.tscn` 查看整体结构，编辑 `ui/pages/` 中的独立页面；详细文件地图、动态几何边界和验证方式见 [场景化视觉编辑](ui/README.md)。

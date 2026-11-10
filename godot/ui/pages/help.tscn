@@ -1,0 +1,183 @@
+[gd_scene load_steps=2 format=3]
+[ext_resource type="Theme" path="res://ui/theme.tres" id="theme"]
+[node name="Help" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+mouse_filter = 2
+theme = ExtResource("theme")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+anchor_left = 0
+anchor_right = 1
+offset_left = 0
+offset_right = 0
+offset_top = 0
+offset_bottom = 600
+mouse_filter = 2
+color = Color(0.062745, 0.098039, 0.105882, 1)
+
+[node name="Heading" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0
+anchor_right = 0
+offset_left = 48
+offset_right = 448
+offset_top = 25
+offset_bottom = 55
+mouse_filter = 2
+text = "HOW TO PLAY"
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(0.65098, 0.956863, 0.811765, 1)
+horizontal_alignment = 0
+text_overrun_behavior = 3
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0
+anchor_right = 1
+offset_left = 48
+offset_right = -48
+offset_top = 96
+offset_bottom = 138
+mouse_filter = 2
+text = "在开放的区间内，跟随节奏。"
+theme_override_font_sizes/font_size = 30
+theme_override_colors/font_color = Color(0.929412, 0.960784, 0.921569, 1)
+horizontal_alignment = 0
+text_overrun_behavior = 3
+
+[node name="Instruction0" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0
+anchor_right = 1
+offset_left = 48
+offset_right = -48
+offset_top = 168
+offset_bottom = 196
+mouse_filter = 2
+text = "Tap：在音符到达下方固定判定线时点击。"
+theme_override_font_sizes/font_size = 16
+theme_override_colors/font_color = Color(0.552941, 0.647059, 0.643137, 1)
+horizontal_alignment = 0
+text_overrun_behavior = 3
+
+[node name="Instruction1" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0
+anchor_right = 1
+offset_left = 48
+offset_right = -48
+offset_top = 206
+offset_bottom = 234
+mouse_filter = 2
+text = "Hold：持续按住，跟随它与下方判定线的交点。"
+theme_override_font_sizes/font_size = 16
+theme_override_colors/font_color = Color(0.552941, 0.647059, 0.643137, 1)
+horizontal_alignment = 0
+text_overrun_behavior = 3
+
+[node name="Instruction2" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0
+anchor_right = 1
+offset_left = 48
+offset_right = -48
+offset_top = 244
+offset_bottom = 272
+mouse_filter = 2
+text = "点击高度不限，但必须在当前开放区域内，并横向对准音符。"
+theme_override_font_sizes/font_size = 16
+theme_override_colors/font_color = Color(0.552941, 0.647059, 0.643137, 1)
+horizontal_alignment = 0
+text_overrun_behavior = 3
+
+[node name="Instruction3" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0
+anchor_right = 1
+offset_left = 48
+offset_right = -48
+offset_top = 282
+offset_bottom = 310
+mouse_filter = 2
+text = "区域可平移、旋转、伸缩；重叠区域按并集判定。"
+theme_override_font_sizes/font_size = 16
+theme_override_colors/font_color = Color(0.552941, 0.647059, 0.643137, 1)
+horizontal_alignment = 0
+text_overrun_behavior = 3
+
+[node name="Instruction4" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0
+anchor_right = 1
+offset_left = 48
+offset_right = -48
+offset_top = 320
+offset_bottom = 348
+mouse_filter = 2
+text = "轨迹与 Hold 的弯折形状竖直下落，Tap 下落时横坐标固定。"
+theme_override_font_sizes/font_size = 16
+theme_override_colors/font_color = Color(0.552941, 0.647059, 0.643137, 1)
+horizontal_alignment = 0
+text_overrun_behavior = 3
+
+[node name="Instruction5" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0
+anchor_right = 1
+offset_left = 48
+offset_right = -48
+offset_top = 358
+offset_bottom = 386
+mouse_filter = 2
+text = "支持多点触控；电脑可用鼠标或 D / F / J / K 演奏。"
+theme_override_font_sizes/font_size = 16
+theme_override_colors/font_color = Color(0.552941, 0.647059, 0.643137, 1)
+horizontal_alignment = 0
+text_overrun_behavior = 3
+
+[node name="Instruction6" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0
+anchor_right = 1
+offset_left = 48
+offset_right = -48
+offset_top = 396
+offset_bottom = 424
+mouse_filter = 2
+text = "导入 .interval 后歌曲复制到本机；自动演示不记录成绩。"
+theme_override_font_sizes/font_size = 16
+theme_override_colors/font_color = Color(0.552941, 0.647059, 0.643137, 1)
+horizontal_alignment = 0
+text_overrun_behavior = 3
+
+[node name="Instruction7" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0
+anchor_right = 1
+offset_left = 48
+offset_right = -48
+offset_top = 434
+offset_bottom = 462
+mouse_filter = 2
+text = "切后台或失去焦点自动暂停，继续前倒数 3 秒。"
+theme_override_font_sizes/font_size = 16
+theme_override_colors/font_color = Color(0.552941, 0.647059, 0.643137, 1)
+horizontal_alignment = 0
+text_overrun_behavior = 3
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 0
+anchor_left = 0
+anchor_right = 0
+offset_left = 48
+offset_right = 198
+offset_top = 522
+offset_bottom = 565
+mouse_filter = 0
+text = "返回"

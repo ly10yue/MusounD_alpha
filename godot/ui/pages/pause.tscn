@@ -1,0 +1,112 @@
+[gd_scene load_steps=2 format=3]
+[ext_resource type="Theme" path="res://ui/theme.tres" id="theme"]
+[node name="Pause" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+mouse_filter = 2
+theme = ExtResource("theme")
+
+[node name="Shade" type="ColorRect" parent="."]
+layout_mode = 0
+anchor_left = 0
+anchor_right = 1
+offset_left = 0
+offset_right = 0
+offset_top = 88
+offset_bottom = 600
+mouse_filter = 2
+color = Color(0.06,0.1,0.11,0.87)
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -238
+offset_right = 238
+offset_top = 158
+offset_bottom = 448
+mouse_filter = 2
+
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -230
+offset_right = 230
+offset_top = 172
+offset_bottom = 217
+mouse_filter = 2
+text = "节奏暂歇"
+theme_override_font_sizes/font_size = 33
+theme_override_colors/font_color = Color(0.929412, 0.960784, 0.921569, 1)
+horizontal_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Subtitle" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -230
+offset_right = 230
+offset_top = 226
+offset_bottom = 252
+mouse_filter = 2
+text = "音乐与谱面已同步暂停"
+theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(0.552941, 0.647059, 0.643137, 1)
+horizontal_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Resume" type="Button" parent="."]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -194
+offset_right = 194
+offset_top = 275
+offset_bottom = 324
+mouse_filter = 0
+text = "继续演奏  →"
+theme_type_variation = &"Primary"
+
+[node name="Restart" type="Button" parent="."]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -194
+offset_right = -6
+offset_top = 338
+offset_bottom = 381
+mouse_filter = 0
+text = "重新开始"
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 6
+offset_right = 194
+offset_top = 338
+offset_bottom = 381
+mouse_filter = 0
+text = "返回选歌"
+
+[node name="Hint" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -230
+offset_right = 230
+offset_top = 396
+offset_bottom = 420
+mouse_filter = 2
+text = "继续前有 3 秒倒数，可重新按住 Hold"
+theme_override_font_sizes/font_size = 12
+theme_override_colors/font_color = Color(0.552941, 0.647059, 0.643137, 1)
+horizontal_alignment = 1
+text_overrun_behavior = 3

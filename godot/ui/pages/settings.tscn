@@ -1,0 +1,316 @@
+[gd_scene load_steps=2 format=3]
+[ext_resource type="Theme" path="res://ui/theme.tres" id="theme"]
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+mouse_filter = 2
+theme = ExtResource("theme")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+anchor_left = 0
+anchor_right = 1
+offset_left = 0
+offset_right = 0
+offset_top = 0
+offset_bottom = 600
+mouse_filter = 2
+color = Color(0.062745, 0.098039, 0.105882, 1)
+
+[node name="Heading" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0
+anchor_right = 0
+offset_left = 48
+offset_right = 448
+offset_top = 25
+offset_bottom = 55
+mouse_filter = 2
+text = "TUNE YOUR SESSION"
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(0.65098, 0.956863, 0.811765, 1)
+horizontal_alignment = 0
+text_overrun_behavior = 3
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0
+anchor_right = 0
+offset_left = 48
+offset_right = 648
+offset_top = 94
+offset_bottom = 140
+mouse_filter = 2
+text = "找到舒服的手感。"
+theme_override_font_sizes/font_size = 34
+theme_override_colors/font_color = Color(0.929412, 0.960784, 0.921569, 1)
+horizontal_alignment = 0
+text_overrun_behavior = 3
+
+[node name="ApproachTitle" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0
+anchor_right = 0
+offset_left = 48
+offset_right = 448
+offset_top = 185
+offset_bottom = 217
+mouse_filter = 2
+text = "下落时间"
+theme_override_font_sizes/font_size = 20
+theme_override_colors/font_color = Color(0.929412, 0.960784, 0.921569, 1)
+horizontal_alignment = 0
+text_overrun_behavior = 3
+
+[node name="ApproachHelp" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0
+anchor_right = 0
+offset_left = 48
+offset_right = 488
+offset_top = 223
+offset_bottom = 249
+mouse_filter = 2
+text = "数字越小，下落越快；不会改变歌曲速度。"
+theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(0.552941, 0.647059, 0.643137, 1)
+horizontal_alignment = 0
+text_overrun_behavior = 3
+
+[node name="ApproachMinus" type="Button" parent="."]
+layout_mode = 0
+anchor_left = 1
+anchor_right = 1
+offset_left = -330
+offset_right = -275
+offset_top = 185
+offset_bottom = 233
+mouse_filter = 0
+text = "−"
+
+[node name="ApproachPlus" type="Button" parent="."]
+layout_mode = 0
+anchor_left = 1
+anchor_right = 1
+offset_left = -103
+offset_right = -48
+offset_top = 185
+offset_bottom = 233
+mouse_filter = 0
+text = "＋"
+
+[node name="ApproachValue" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 1
+anchor_right = 1
+offset_left = -275
+offset_right = -103
+offset_top = 189
+offset_bottom = 223
+mouse_filter = 2
+text = ""
+theme_override_font_sizes/font_size = 22
+theme_override_colors/font_color = Color(0.65098, 0.956863, 0.811765, 1)
+horizontal_alignment = 1
+text_overrun_behavior = 3
+
+[node name="OffsetTitle" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0
+anchor_right = 0
+offset_left = 48
+offset_right = 448
+offset_top = 289
+offset_bottom = 321
+mouse_filter = 2
+text = "音符延迟补偿"
+theme_override_font_sizes/font_size = 20
+theme_override_colors/font_color = Color(0.929412, 0.960784, 0.921569, 1)
+horizontal_alignment = 0
+text_overrun_behavior = 3
+
+[node name="OffsetHelp" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0
+anchor_right = 0
+offset_left = 48
+offset_right = 488
+offset_top = 327
+offset_bottom = 353
+mouse_filter = 2
+text = "正值使音符更晚到线，设置会自动保存。"
+theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(0.552941, 0.647059, 0.643137, 1)
+horizontal_alignment = 0
+text_overrun_behavior = 3
+
+[node name="OffsetMinus" type="Button" parent="."]
+layout_mode = 0
+anchor_left = 1
+anchor_right = 1
+offset_left = -330
+offset_right = -275
+offset_top = 289
+offset_bottom = 337
+mouse_filter = 0
+text = "−"
+
+[node name="OffsetPlus" type="Button" parent="."]
+layout_mode = 0
+anchor_left = 1
+anchor_right = 1
+offset_left = -103
+offset_right = -48
+offset_top = 289
+offset_bottom = 337
+mouse_filter = 0
+text = "＋"
+
+[node name="OffsetValue" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 1
+anchor_right = 1
+offset_left = -275
+offset_right = -103
+offset_top = 293
+offset_bottom = 327
+mouse_filter = 2
+text = ""
+theme_override_font_sizes/font_size = 22
+theme_override_colors/font_color = Color(0.65098, 0.956863, 0.811765, 1)
+horizontal_alignment = 1
+text_overrun_behavior = 3
+
+[node name="GuideTitle" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0
+anchor_right = 0
+offset_left = 48
+offset_right = 448
+offset_top = 389
+offset_bottom = 421
+mouse_filter = 2
+text = "区域辅助显示"
+theme_override_font_sizes/font_size = 20
+theme_override_colors/font_color = Color(0.929412, 0.960784, 0.921569, 1)
+horizontal_alignment = 0
+text_overrun_behavior = 3
+
+[node name="GuideHelp" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0
+anchor_right = 0
+offset_left = 48
+offset_right = 468
+offset_top = 420
+offset_bottom = 445
+mouse_filter = 2
+text = "显示开放区域填色，边界始终保留。"
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.552941, 0.647059, 0.643137, 1)
+horizontal_alignment = 0
+text_overrun_behavior = 3
+
+[node name="Guide" type="Button" parent="."]
+layout_mode = 0
+anchor_left = 1
+anchor_right = 1
+offset_left = -204
+offset_right = -48
+offset_top = 392
+offset_bottom = 434
+mouse_filter = 0
+text = "开启"
+
+[node name="SoundsTitle" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0
+anchor_right = 0
+offset_left = 48
+offset_right = 348
+offset_top = 454
+offset_bottom = 486
+mouse_filter = 2
+text = "打击音效"
+theme_override_font_sizes/font_size = 20
+theme_override_colors/font_color = Color(0.929412, 0.960784, 0.921569, 1)
+horizontal_alignment = 0
+text_overrun_behavior = 3
+
+[node name="Sounds" type="Button" parent="."]
+layout_mode = 0
+anchor_left = 1
+anchor_right = 1
+offset_left = -204
+offset_right = -48
+offset_top = 451
+offset_bottom = 489
+mouse_filter = 0
+text = "打击音：开"
+
+[node name="VolumeTitle" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 1
+anchor_right = 1
+offset_left = -380
+offset_right = -330
+offset_top = 503
+offset_bottom = 528
+mouse_filter = 2
+text = "音量"
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.552941, 0.647059, 0.643137, 1)
+horizontal_alignment = 0
+text_overrun_behavior = 3
+
+[node name="VolumeMinus" type="Button" parent="."]
+layout_mode = 0
+anchor_left = 1
+anchor_right = 1
+offset_left = -330
+offset_right = -275
+offset_top = 501
+offset_bottom = 539
+mouse_filter = 0
+text = "−"
+
+[node name="VolumePlus" type="Button" parent="."]
+layout_mode = 0
+anchor_left = 1
+anchor_right = 1
+offset_left = -103
+offset_right = -48
+offset_top = 501
+offset_bottom = 539
+mouse_filter = 0
+text = "＋"
+
+[node name="VolumeValue" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 1
+anchor_right = 1
+offset_left = -275
+offset_right = -103
+offset_top = 500
+offset_bottom = 531
+mouse_filter = 2
+text = ""
+theme_override_font_sizes/font_size = 19
+theme_override_colors/font_color = Color(0.65098, 0.956863, 0.811765, 1)
+horizontal_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 0
+anchor_left = 0
+anchor_right = 0
+offset_left = 48
+offset_right = 178
+offset_top = 527
+offset_bottom = 569
+mouse_filter = 0
+text = "返回"

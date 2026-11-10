@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3]
+[ext_resource type="Script" path="res://ui/playfield.gd" id="script"]
+[ext_resource type="PackedScene" path="res://ui/components/geometry_layer.tscn" id="geometry"]
+[ext_resource type="PackedScene" path="res://ui/components/hud.tscn" id="hud"]
+[ext_resource type="Resource" path="res://ui/playfield_skin.tres" id="skin"]
+[ext_resource type="Theme" path="res://ui/theme.tres" id="theme"]
+[node name="Playfield" type="Control"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+theme = ExtResource("theme")
+script = ExtResource("script")
+skin = ExtResource("skin")
+[node name="Outside" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0.031,0.055,0.063,1)
+[node name="Canvas" type="Control" parent="."]
+offset_right = 1066.6667
+offset_bottom = 600.0
+mouse_filter = 2
+[node name="Background" type="ColorRect" parent="Canvas"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0.063,0.098,0.106,1)
+[node name="FieldBackground" type="ColorRect" parent="Canvas"]
+anchor_right = 1.0
+offset_left = 48.0
+offset_right = -48.0
+offset_top = 100.0
+offset_bottom = 565.0
+mouse_filter = 2
+color = Color(0.035,0.059,0.067,1)
+[node name="Regions" parent="Canvas" instance=ExtResource("geometry")]
+[node name="Tracks" parent="Canvas" instance=ExtResource("geometry")]
+[node name="Notes" parent="Canvas" instance=ExtResource("geometry")]
+[node name="Effects" parent="Canvas" instance=ExtResource("geometry")]
+[node name="JudgementLine" type="ColorRect" parent="Canvas"]
+anchor_right = 1.0
+offset_left = 48.0
+offset_right = -48.0
+offset_top = 479.0
+offset_bottom = 481.0
+mouse_filter = 2
+color = Color(0.929,0.961,0.922,1)
+[node name="HUD" parent="Canvas" instance=ExtResource("hud")]

@@ -165,11 +165,15 @@ class Zone:
 			if curves.has(props[i]): result[i]=curves[props[i]].value(t)
 		return result
 	func contains(x: float,y: float,t: float,aspect: float) -> bool:
-		var v=geometry(t); var dx=(x-v[0])*aspect; var dy=y-v[1]
+		var v=geometry(t)
+		if v[3]<=0 or v[4]<=0: return false
+		var dx=(x-v[0])*aspect; var dy=y-v[1]
 		var c=cos(deg_to_rad(v[2])); var s=sin(deg_to_rad(v[2]))
 		return absf((c*dx+s*dy)/aspect)<=v[3]/2.0+0.0000001 and absf(-s*dx+c*dy)<=v[4]/2.0+0.0000001
 	func polygon(t: float,aspect: float) -> PackedVector2Array:
-		var v=geometry(t); var c=cos(deg_to_rad(v[2])); var s=sin(deg_to_rad(v[2])); var points=PackedVector2Array()
+		var v=geometry(t)
+		if v[3]<=0 or v[4]<=0: return PackedVector2Array()
+		var c=cos(deg_to_rad(v[2])); var s=sin(deg_to_rad(v[2])); var points=PackedVector2Array()
 		for corner in [Vector2(-1,-1),Vector2(1,-1),Vector2(1,1),Vector2(-1,1)]:
 			var dx=corner.x*v[3]/2.0*aspect; var dy=corner.y*v[4]/2.0
 			points.append(Vector2(v[0]+(c*dx-s*dy)/aspect,v[1]+s*dx+c*dy))
@@ -177,7 +181,7 @@ class Zone:
 	func touch_y(x: float,t: float,aspect: float) -> Variant:
 		if x<0 or x>1: return null
 		var points=polygon(t,aspect); var low=INF; var high=-INF
-		for i in range(4):
+		for i in range(points.size()):
 			var a=points[i]; var b=points[(i+1)%4]
 			if x<minf(a.x,b.x)-0.0000001 or x>maxf(a.x,b.x)+0.0000001: continue
 			if absf(b.x-a.x)<0.000000001:

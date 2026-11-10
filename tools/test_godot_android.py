@@ -21,7 +21,7 @@ print(adb('install','-r',str(out/'fixture.apk')).decode(),flush=True)
 seed=adb('shell','am','instrument','-w','studio.interval.godot.tests/.SeedLegacy').decode()
 if 'PASS:' not in seed:raise SystemExit(seed)
 print(seed,flush=True)
-print(adb('install','-r',str(ROOT/'dist/MusounD-0.13.0.apk')).decode(),flush=True)
+print(adb('install','-r',str(ROOT/'dist'/('MusounD-'+json.loads((ROOT/'release.json').read_text())['appVersion']+'.apk'))).decode(),flush=True)
 print(adb('install','-r',str(out/'fixture.apk')).decode(),flush=True)
 for aspect,size in [('16x9','1280x720'),('4x3','1024x768')]:
     adb('shell','am','force-stop','studio.interval');adb('shell','wm','size',size)

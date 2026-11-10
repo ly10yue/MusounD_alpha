@@ -1,0 +1,11 @@
+[gd_scene format=3]
+[node name="HoldTail" type="Control"]
+mouse_filter = 2
+[node name="Head" type="ColorRect" parent="."]
+anchor_left = -0.5
+anchor_right = 0.5
+offset_left = -3.0
+offset_right = 3.0
+offset_top = -2.0
+offset_bottom = 3.0
+mouse_filter = 2
